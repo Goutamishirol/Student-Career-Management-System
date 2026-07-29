@@ -1,7 +1,14 @@
 package com.example.demo;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import jakarta.persistence.Column;
+import java.util.List;
+
+import com.example.demo.model.Certificate;
+import com.example.demo.model.Internship;
+import com.example.demo.model.Skill;
+
+@JsonIgnoreProperties({"skills","certificates","internships"})
 @Entity
 @Table(name = "users")
 public class User {
@@ -16,6 +23,18 @@ public class User {
     private String email;
 
     private String password;
+
+    // One User -> Many Skills
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Skill> skills;
+
+    // One User -> Many Certificates
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Certificate> certificates;
+
+    // One User -> Many Internships
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Internship> internships;
 
     // Empty constructor
     public User() {
@@ -53,5 +72,29 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<Skill> skills) {
+        this.skills = skills;
+    }
+
+    public List<Certificate> getCertificates() {
+        return certificates;
+    }
+
+    public void setCertificates(List<Certificate> certificates) {
+        this.certificates = certificates;
+    }
+
+    public List<Internship> getInternships() {
+        return internships;
+    }
+
+    public void setInternships(List<Internship> internships) {
+        this.internships = internships;
     }
 }

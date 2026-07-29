@@ -1,3 +1,21 @@
+# Gradle
+.gradle/
+build/
+out/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Logs
+*.log
+
+# Runtime / uploads
+uploads/
+test-upload.png
+
+# Generated
+generated/
 HELP.md
 .gradle
 build/

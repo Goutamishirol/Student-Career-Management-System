@@ -1,26 +1,26 @@
 package com.example.demo.model;
 
+import com.example.demo.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "internships")
+@Table(name = "internship")
 public class Internship {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String companyName;
-
+    private String company;
     private String role;
-
-    private String applicationDate;
-
+    private String duration;
     private String status;
 
-    private String link;
-
-    private String notes;
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     public Internship() {
     }
@@ -33,12 +33,12 @@ public class Internship {
         this.id = id;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getCompany() {
+        return company;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setCompany(String company) {
+        this.company = company;
     }
 
     public String getRole() {
@@ -49,12 +49,12 @@ public class Internship {
         this.role = role;
     }
 
-    public String getApplicationDate() {
-        return applicationDate;
+    public String getDuration() {
+        return duration;
     }
 
-    public void setApplicationDate(String applicationDate) {
-        this.applicationDate = applicationDate;
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 
     public String getStatus() {
@@ -65,19 +65,11 @@ public class Internship {
         this.status = status;
     }
 
-    public String getLink() {
-        return link;
+    public User getUser() {
+        return user;
     }
 
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
+    public void setUser(User user) {
+        this.user = user;
     }
 }
