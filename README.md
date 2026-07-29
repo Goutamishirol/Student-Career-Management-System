@@ -89,3 +89,9 @@ The platform is designed to simplify career management and help users maintain a
 
 The application follows a layered architecture based on the MVC design pattern.
 
+## Author
+
+Goutami Shirol
+Information Science Engineering Student
+Passionate about Full Stack Development, Data Analytics, and building real-world software solutions.
+
