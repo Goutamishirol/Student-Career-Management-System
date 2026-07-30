@@ -5,6 +5,17 @@ A production-ready full-stack web application designed to help students and aspi
 Built using **React, Spring Boot, and MySQL**, the application follows a RESTful architecture and provides secure user-specific data management, ensuring complete privacy and personalization for every user.
 
 ---
+---
+
+## 🚀 Live Demo
+
+🌐 **Frontend (Vercel)**  
+https://student-career-management-system.vercel.app
+
+⚙️ **Backend API (Render)**  
+https://student-career-management-system.onrender.com
+
+---
 
 ## Overview
 
