@@ -176,10 +176,14 @@ function Certificates() {
       });
   };
 
-  const getFileUrl = (fileName) => {
-    return fileName ? `https://student-career-management-system.onrender.com/uploads/` : null;
-  };
-
+  // const getFileUrl = (fileName) => {
+  //   return fileName ? `https://student-career-management-system.onrender.com/uploads/` : null;
+  // };
+const getFileUrl = (fileName) => {
+  return fileName
+    ? `https://student-career-management-system.onrender.com/uploads/`
+    : null;
+};
   const viewFile = (fileName) => {
     const url = getFileUrl(fileName);
     if (!url) {
