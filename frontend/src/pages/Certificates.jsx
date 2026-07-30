@@ -177,7 +177,7 @@ function Certificates() {
   };
 
   const getFileUrl = (fileName) => {
-    return fileName ? `http://localhost:8080/uploads/${fileName}` : null;
+    return fileName ? `https://student-career-management-system.onrender.com/uploads/` : null;
   };
 
   const viewFile = (fileName) => {
