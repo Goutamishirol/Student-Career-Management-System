@@ -10,7 +10,13 @@ import com.example.demo.dto.LoginRequest;
 import com.example.demo.dto.LoginResponse;
 import com.example.demo.repository.UserRepository;
 
-@CrossOrigin(origins = "http://localhost:5173")
+// @CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(
+    origins = {
+        "http://localhost:5173",
+        "https://student-career-management-system.vercel.app"
+    }
+)
 @RestController
 @RequestMapping("/api/users")
 public class UserController  {
