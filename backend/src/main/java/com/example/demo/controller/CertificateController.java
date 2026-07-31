@@ -20,7 +20,12 @@ import com.example.demo.model.Certificate;
 import com.example.demo.repository.CertificateRepository;
 import com.example.demo.repository.UserRepository;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(
+    origins = {
+        "http://localhost:5173",
+        "https://student-career-management-system.vercel.app"
+    }
+)
 @RestController
 @RequestMapping("/api/certificates")
 public class CertificateController {

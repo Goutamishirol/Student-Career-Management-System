@@ -181,9 +181,10 @@ function Certificates() {
   // };
 const getFileUrl = (fileName) => {
   return fileName
-    ? `https://student-career-management-system.onrender.com/uploads/`
+    ? `https://student-career-management-system.onrender.com/uploads/${fileName}`
     : null;
 };
+
   const viewFile = (fileName) => {
     const url = getFileUrl(fileName);
     if (!url) {
